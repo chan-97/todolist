@@ -19,5 +19,5 @@ export const App: FC = () => {
 };
 
 const ScAppContainer = styled.div`
-  background-color: ${({ theme }) => theme.colors.beige};
+  background-color: ${({ theme }) => theme.colors.gray};
 `;
