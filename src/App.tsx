@@ -9,15 +9,19 @@ import styled from "styled-components";
 
 export const App: FC = () => {
   return (
-    <ScAppContainer>
+    <>
       <TodoListHeader />
-      <TodoListInputsContainer />
-      <TodosContainer />
+      <ScTodoListBody>
+        <TodoListInputsContainer />
+        <TodosContainer />
+      </ScTodoListBody>
       <TodoListFooter />
-    </ScAppContainer>
+    </>
   );
 };
 
-const ScAppContainer = styled.div`
-  background-color: ${({ theme }) => theme.colors.gray};
+const ScTodoListBody = styled.section`
+  max-width: 1256px;
+  margin: 0 auto;
+  padding: 0 3.75rem;
 `;
