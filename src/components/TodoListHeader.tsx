@@ -17,6 +17,7 @@ const ScTodoListHeaderContainer = styled.header`
 
 const ScTodoListHeader = styled.div`
   display: flex;
+  justify-content: center;
   align-items: center;
   max-width: 1256px;
   height: 100%;

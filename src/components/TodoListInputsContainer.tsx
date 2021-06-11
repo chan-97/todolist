@@ -23,23 +23,21 @@ const ScFormContainer = styled.div`
 
 const ScFormWrapper = styled.form`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 5rem;
-  padding: 0 1.25rem;
 `;
 
 const ScTodoInputsBox = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  width: 80%;
+  width: 50%;
   height: 70%;
 `;
 
 const ScTodoInput = styled.input`
   width: 40%;
   padding: 0.938rem;
+  margin-right: 1.25rem;
   border: 3px solid rgba(0, 0, 0, 0.3);
   border-radius: 30px;
   font-size: ${({ theme }) => theme.fontSizes.standard};
