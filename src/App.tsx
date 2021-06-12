@@ -3,7 +3,6 @@ import {
   TodoListHeader,
   TodoListInputsContainer,
   TodosContainer,
-  TodoListFooter,
 } from "./components";
 import styled from "styled-components";
 
@@ -15,7 +14,6 @@ export const App: FC = () => {
         <TodoListInputsContainer />
         <TodosContainer />
       </ScTodoListBody>
-      <TodoListFooter />
     </>
   );
 };

@@ -1,12 +1,13 @@
+import React from "react";
 import styled from "styled-components";
 
 export const CheckBox = () => {
-  return(
+  return (
     <UnCheckedCheckBox>
       <ScInnerCheckBox />
     </UnCheckedCheckBox>
-  )
-}
+  );
+};
 
 export const UnCheckedCheckBox = styled.div`
   display: flex;
