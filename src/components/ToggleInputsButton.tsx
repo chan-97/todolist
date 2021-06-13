@@ -2,10 +2,16 @@ import React, { FC } from "react";
 import styled from "styled-components";
 import { PlusIcon } from "./icon";
 
-export const ToggleInputsButton: FC = () => {
+interface IProps {
+  handleInputs(): void;
+}
+
+export const ToggleInputsButton: FC<IProps> = ({
+  handleInputs,
+}): JSX.Element => {
   return (
     <ScToggleInputsButtonContainer>
-      <ScToggleInputsButton>
+      <ScToggleInputsButton onClick={handleInputs}>
         <PlusIcon />
       </ScToggleInputsButton>
     </ScToggleInputsButtonContainer>

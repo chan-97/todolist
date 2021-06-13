@@ -3,12 +3,22 @@ import styled from "styled-components";
 import { CheckBox, UnCheckedCheckBox } from "./icon";
 import ICON_CLOSE from "./icon/icon_close.png";
 
-export const TodoItem: FC = () => {
+interface ITask {
+  taskName: string;
+  deadline: number;
+}
+
+interface IProps {
+  todo: ITask;
+}
+
+export const TodoItem: FC<IProps> = ({ todo }): JSX.Element => {
   return (
     <ScTodo>
-      <span>react</span>
+      <span>{todo.taskName}</span>
       <ScTodoSettingsBox>
-        <ScDeadline>2021년 0월 0일 까지</ScDeadline>
+        {/* <ScDeadline>2021년 0월 0일 까지</ScDeadline> */}
+        <ScDeadline>{todo.deadline}</ScDeadline>
         <CheckBox />
         <UnCheckedCheckBox />
         <img src={ICON_CLOSE} />

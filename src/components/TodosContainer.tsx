@@ -2,13 +2,28 @@ import React, { FC } from "react";
 import { TodoItem, ToggleInputsButton } from "./";
 import styled from "styled-components";
 
-export const TodosContainer: FC = () => {
+interface ITask {
+  taskName: string;
+  deadline: number;
+}
+
+interface IProps {
+  handleInputs(): void;
+  todoList: ITask[];
+}
+
+export const TodosContainer: FC<IProps> = ({
+  handleInputs,
+  todoList,
+}): JSX.Element => {
   return (
     <ScTodosContainer>
       <ScTodolistBox>
-        <TodoItem />
+        {todoList.map((todo: ITask, idx: number) => {
+          return <TodoItem key={idx} todo={todo} />;
+        })}
       </ScTodolistBox>
-      <ToggleInputsButton />
+      <ToggleInputsButton handleInputs={handleInputs} />
     </ScTodosContainer>
   );
 };

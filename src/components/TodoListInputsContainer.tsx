@@ -1,15 +1,42 @@
-import React, { FC } from "react";
+import React, { FC, ChangeEvent } from "react";
 import styled from "styled-components";
 
-export const TodoListInputsContainer: FC = () => {
+interface ITask {
+  taskName: string;
+  deadline: number;
+}
+
+interface IProps {
+  handleChange(e: ChangeEvent<HTMLInputElement>): void;
+  addTodo(): void;
+  task: ITask;
+}
+
+export const TodoListInputsContainer: FC<IProps> = ({
+  handleChange,
+  addTodo,
+  task,
+}): JSX.Element => {
   return (
     <ScFormContainer>
       <ScFormWrapper>
         <ScTodoInputsBox>
-          <ScTodoInput type="string" placeholder="todo" />
-          <ScTodoInput type="number" placeholder="deadline" />
+          <ScTodoInput
+            value={task.taskName}
+            name="taskName"
+            onChange={handleChange}
+            type="string"
+            placeholder="task"
+          />
+          <ScTodoInput
+            value={task.deadline}
+            name="deadline"
+            onChange={handleChange}
+            type="number"
+            placeholder="deadline"
+          />
         </ScTodoInputsBox>
-        <ScSubmitButton>Submit</ScSubmitButton>
+        <ScSubmitButton onClick={addTodo}>Submit</ScSubmitButton>
       </ScFormWrapper>
     </ScFormContainer>
   );
